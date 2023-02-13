@@ -26,11 +26,21 @@ console.log(jonas['first' + nameKey]);
 console.log(jonas['last' + nameKey]);
 
 
-const interestedIn = prompt('What do you want to know about Jonas?  Choose between firstName, lastName, age, job and friends.');
+//const interestedIn = prompt('What do you want to know about Jonas?  Choose between firstName, lastName, age, job and friends.');
 
 
-if(jonas[interestedIn]) {
+/*if(jonas[interestedIn]) {
     console.log(jonas[interestedIn]);
 } else {
     console.log('Wrong request! Choose between firstName, lastName, age, job and friends.') ;
-}
+} */
+
+jonas.location = 'Portugal';
+jonas['twitter'] = '@jonasschmedtman';
+console.log(jonas.location);
+console.log(jonas['twitter']);
+
+
+
+console.log(`${jonas.firstName} has ${3} friends.`);
+console.log(jonas.indexOf

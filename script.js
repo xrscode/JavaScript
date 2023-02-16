@@ -1,46 +1,21 @@
 'use strict'
 
-//An Array:
-const jonasArray = [
-    'Jonas',
-    'Schmedtmann',
-    2037-1991,
-    'Teacher',
-    ['Michael', 'Peter', 'Steven']
-] ;
-
-//An Object:
 const jonas = {
     firstName: 'Jonas',
     lastName: 'Schmedtmann',
-    age: 2037-1991,
-    job: 'Teacher',
-    friends: ['Michael', 'Peter', 'Steven']
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge: function() {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function() {
+        return `${this.firstName} is a ${this.calcAge()} year old, ${this.job}.  He has ${this.hasDriversLicense ? 'a' : 'no'} drivers license.`
+
+    }
 } ;
 
-console.log(jonas.lastName);
-console.log(jonas['lastName']);
-
-const nameKey = 'Name';
-console.log(jonas['first' + nameKey]);
-console.log(jonas['last' + nameKey]);
-
-
-//const interestedIn = prompt('What do you want to know about Jonas?  Choose between firstName, lastName, age, job and friends.');
-
-
-/*if(jonas[interestedIn]) {
-    console.log(jonas[interestedIn]);
-} else {
-    console.log('Wrong request! Choose between firstName, lastName, age, job and friends.') ;
-} */
-
-jonas.location = 'Portugal';
-jonas['twitter'] = '@jonasschmedtman';
-console.log(jonas.location);
-console.log(jonas['twitter']);
-
-
-
-console.log(`${jonas.firstName} has ${3} friends.`);
-console.log(jonas.indexOf
+console.log(jonas.getSummary());

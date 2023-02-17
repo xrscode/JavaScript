@@ -1,50 +1,63 @@
 'use strict'
 
-//Mark Miller Object
-const markMiller = {
-    firstName: 'Mark',
-    secondName: 'Miller',
-    mass: 78,
-    height: 1.69,
-    calcBMI: function() {
-        this.bmi = (this.mass)/(this.height**2);
-        return this.bmi;
-    },
-    markSummary: function() {
-        return `${this.firstName} ${this.secondName} has a BMI value of ${this.calcBMI()}.`;
-    },
+//for loop keeps running while condition is TRUE.
+// for (let rep = 1; rep <= 20; rep++) {
+//     console.log(`Print this statement multiple times. Repetition number: ${rep}.`) ;
+// } ; 
 
+
+
+//Array
+const jonas = [
+    'Jonas',                       //Position 0
+    'Schmedtmann',                 //Position 1
+    2037 - 1991,                   //Position 2
+    'teacher',                    // Position 3
+    ['Michael', 'Peter', 'Steven'] //Position 4
+] ;
+
+// for (let i = jonas.length - 1; i >= 0; i-- ){
+//     console.log(i, jonas[i]);
+// } ;
+
+for (let exercise = 1; exercise <= 3; exercise++){
+    console.log(`Starting Exercise ${exercise}.`) ;
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Lifting weight rep number: ${rep}.`) ;
+    }
 };
-markMiller.calcBMI();
-console.log(markMiller.bmi);
-
-console.log(markMiller.markSummary());
 
 
-//John Smith Object
-const johnSmith = {
-    firstName: 'John',
-    secondName: 'Smith',
-    mass: 92,
-    height: 1.95,
-    calcBMI: function() {
-        this.bmi = (this.mass)/(this.height**2);
-        return this.bmi;
-    },
-    johnSummary: function() {
-        return `${this.firstName} ${this.secondName} has a BMI value of ${this.calcBMI()}.`
-    },
+
+
+
+
+
+
+
+
+// for (let i = 0; i < jonas.length ; i++) {
+//     if(typeof jonas[i] === 'number') break;
     
-};
+//     console.log(jonas[i], typeof jonas[i])
+// } ;
+    
 
 
-console.log(johnSmith.johnSummary());
+//     //types[i] = typeof jonas[i];
+//     types.push(typeof jonas[i]);
+// };
 
-//if/else Higher BMI
-if (markMiller.bmi > johnSmith.bmi) {
-    console.log(`${markMiller.firstName} ${markMiller.secondName} has a BMI of ${markMiller.bmi}.  It is higher than Johns BMI which is only ${johnSmith.bmi}.`);
-} else if (markMiller.bmi < johnSmith.bmi) {
-    console.log(`${johnSmith.firstName} ${johnSmith.secondName} has a BMI of ${johnSmith.bmi}.  It is higher than Mark's BMI which is only ${markMiller.bmi}.`);
-} else if (markMiller.bmi === johnSmith.bmi) {
-    console.log('They both have the same BMI.');
-} ;
+// console.log(types);
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++ ) {
+//     ages.push(2023 - years[i]);
+// };
+
+// console.log(ages);
+
+// // Continue & Break Statements

@@ -85,14 +85,40 @@
 //     };
 // } ;
 
-let rep = 1;
-while (rep <= 10) {
-    console.log(`WHILE: Lifting weights repetition ${rep}`);
-    rep++;
-};
+// let rep = 1;
+// while (rep <= 10) {
+//     console.log(`WHILE: Lifting weights repetition ${rep}`);
+//     rep++;
+// };
 
-let dice = Math.trunc(Math.random() * 6) + 1;
+// let dice = Math.trunc(Math.random() * 6) + 1;
     
 // while (dice !== 6) {
 //     console.log(`You rolled a ${dice}.`) ;
+//     dice = Math.trunc(Math.random() * 6) + 1;
+//     if (dice === 6) console.log(`Loop is about to end.`);
 // } ;
+
+//JavaScript Fundamentals Coding Challenge #4
+
+//Array for Bills containing test values
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52] ;
+console.log(bills);
+
+const tips = [] ;
+const totals = [] ;
+
+
+const tip = function (a) {
+    return (a * 0.2) ;
+} ;
+
+let billTotal = function (a) {
+    return a + tip(a);
+} ;
+
+
+for (let i = 0; i < bills.length ; i++ ) {
+    console.log(`Your bill total is $${bills[i]}.  Your tip total is $${tip(bills[i])}.  Your bill total is: $${billTotal(bills[i])}.`) ;
+} ;
+

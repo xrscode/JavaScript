@@ -117,8 +117,52 @@ let billTotal = function (a) {
     return a + tip(a);
 } ;
 
-
-for (let i = 0; i < bills.length ; i++ ) {
-    console.log(`Your bill total is $${bills[i]}.  Your tip total is $${tip(bills[i])}.  Your bill total is: $${billTotal(bills[i])}.`) ;
+let billFinal = function (a) {
+    return tip(a) + a;
 } ;
+
+console.log(billFinal(22)) ; 
+
+
+//for Loop to add to our array
+for (let i = 0; i < bills.length; i++) {
+    tips.push(tip(bills[i])) ;
+} ; 
+
+//for Loop to add one array to the other
+for (let i = 0; i < bills.length; i++) {
+    totals.push(bills[i] + tips[i]) ;
+} ; 
+
+console.log(`This array is for tips; ${tips}`) ; 
+console.log(`This array is for totals; ${totals}`); 
+
+let arr = [
+    5,
+    6,
+    7,
+    9, 
+] ; 
+
+
+const calcAverage = function(a) {
+    let sum = 0;
+    for (let i = 0; i < a.length; i++) {
+        sum = sum + a[i] ;
+    } ; 
+    
+    return sum / a.length;
+} ;
+
+console.log(calcAverage(arr)); 
+console.log(calcAverage(totals));
+
+
+
+
+
+
+// for (let i = 0; i < bills.length ; i++ ) {
+//     console.log(`Your bill total is $${bills[i]}.  Your tip total is $${tip(bills[i])}.  Your bill total is: $${billTotal(bills[i])}.`) ;
+// } ;
 

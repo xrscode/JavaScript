@@ -102,60 +102,60 @@
 //JavaScript Fundamentals Coding Challenge #4
 
 //Array for Bills containing test values
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52] ;
-console.log(bills);
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52] ;
+// console.log(bills);
 
-const tips = [] ;
-const totals = [] ;
-
-
-const tip = function (a) {
-    return (a * 0.2) ;
-} ;
-
-let billTotal = function (a) {
-    return a + tip(a);
-} ;
-
-let billFinal = function (a) {
-    return tip(a) + a;
-} ;
-
-console.log(billFinal(22)) ; 
+// const tips = [] ;
+// const totals = [] ;
 
 
-//for Loop to add to our array
-for (let i = 0; i < bills.length; i++) {
-    tips.push(tip(bills[i])) ;
-} ; 
+// const tip = function (a) {
+//     return (a * 0.2) ;
+// } ;
 
-//for Loop to add one array to the other
-for (let i = 0; i < bills.length; i++) {
-    totals.push(bills[i] + tips[i]) ;
-} ; 
+// let billTotal = function (a) {
+//     return a + tip(a);
+// } ;
 
-console.log(`This array is for tips; ${tips}`) ; 
-console.log(`This array is for totals; ${totals}`); 
+// let billFinal = function (a) {
+//     return tip(a) + a;
+// } ;
 
-let arr = [
-    5,
-    6,
-    7,
-    9, 
-] ; 
+// console.log(billFinal(22)) ; 
 
 
-const calcAverage = function(a) {
-    let sum = 0;
-    for (let i = 0; i < a.length; i++) {
-        sum = sum + a[i] ;
-    } ; 
+// //for Loop to add to our array
+// for (let i = 0; i < bills.length; i++) {
+//     tips.push(tip(bills[i])) ;
+// } ; 
+
+// //for Loop to add one array to the other
+// for (let i = 0; i < bills.length; i++) {
+//     totals.push(bills[i] + tips[i]) ;
+// } ; 
+
+// console.log(`This array is for tips; ${tips}`) ; 
+// console.log(`This array is for totals; ${totals}`); 
+
+// let arr = [
+//     5,
+//     6,
+//     7,
+//     9, 
+// ] ; 
+
+
+// const calcAverage = function(a) {
+//     let sum = 0;
+//     for (let i = 0; i < a.length; i++) {
+//         sum = sum + a[i] ;
+//     } ; 
     
-    return sum / a.length;
-} ;
+//     return sum / a.length;
+// } ;
 
-console.log(calcAverage(arr)); 
-console.log(calcAverage(totals));
+// console.log(calcAverage(arr)); 
+// console.log(calcAverage(totals));
 
 
 
@@ -166,3 +166,33 @@ console.log(calcAverage(totals));
 //     console.log(`Your bill total is $${bills[i]}.  Your tip total is $${tip(bills[i])}.  Your bill total is: $${billTotal(bills[i])}.`) ;
 // } ;
 
+// let ham = [
+//     'Poop',
+//     'Walk',
+//     'Growls'
+// ];
+
+// console.log(ham);
+
+// console.log(ham[1]);
+
+let input = 'Why hello there.  My name is Dylan and I am a cheeky dog.';
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+let resultArray = [];
+
+//Loop to iterate through each letter of the input variable text.
+for (let i = 0; i < input.length; i++) {
+    if (input[i] === 'e' || input[i] === 'u') {
+        resultArray.push(input[i]);
+    };
+    
+    for (let b = 0; b < vowels.length; b++) {
+        if (vowels[b] === input[i]) {
+            resultArray.push(vowels[b]);
+        };
+    };
+};
+
+let resultString = resultArray.join('').toUpperCase();
+
+console.log(resultString);

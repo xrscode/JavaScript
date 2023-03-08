@@ -1,31 +1,52 @@
 "use strict";
-// let n = 5;
-// let m = 6;
+// Problem:
+//We work for a company building a smart home thermomenter.  Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude.  Keep in mind that someitmes there might be a sensor error."
 
-// let paperWork = function () {
-//   let result = n * m;
-//   if (result >= 0) {
-//     return result;
-//   } else if (result < 0) {
-//     return "Invalid number.";
-//   }
-// };
+const temperatures = [
+  3,
+  -2,
+  -6,
+  -1,
+  "error",
+  9,
+  1000,
+  -101,
+  13,
+  17,
+  15,
+  14,
+  9,
+  5,
+];
+let numberArray = [];
 
-// console.log(paperWork());
+for (let i = 0; i < temperatures.length; i++) {
+  if (
+    typeof temperatures[i] === "number" &&
+    temperatures[i] <= 100 &&
+    temperatures[i] >= -100
+  ) {
+    numberArray.push(temperatures[i]);
+  } else {
+    console.log(`These are the errors: ${temperatures[i]}`);
+  }
+}
 
-//Function to Return String times Integer.
-//n is integer.
-//s is string.
-// function repeatStr(n, s) {
-//   return s.repeat(n);
-// }
+numberArray.sort(function (a, b) {
+  return a - b;
+});
 
-//Function to Split a string and convert it into an array of words.
-// function stringToArray(string) {
-//   // code code code
-//   return string.split(" ");
-// }
+let amplitude = function () {
+  let amp = numberArray[0] - numberArray[numberArray.length - 1];
+  if (amp <= 0) {
+    return amp * -1;
+  } else {
+    return amp;
+  }
+};
 
-// console.log(stringToArray("Hello I am Dylan"));
-//Given an array of integers, return a new array with each value doubled.
-// function maps(x) {}
+console.log(`The temperature amplitude is; ${amplitude()} degrees.`);
+
+//1.  Understand the problem.
+//First define temperature amplitude:  Temperature amplitude is the difference between the minimum and maximum temperature that ocurred within a specific recording time period.   So we need to consider creating a new array with ordered data.
+//2. Breaking into sub-problems.

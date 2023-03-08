@@ -47,6 +47,23 @@ let amplitude = function () {
 
 console.log(`The temperature amplitude is; ${amplitude()} degrees.`);
 
+//Alternative Solution
+
+const calcTempAmplitude = function (temps) {
+  let max = temps[0];
+  let min = temps[0];
+
+  for (let i = 0; i < temps.length; i++) {
+    const curTemp = temps[i];
+    if (typeof curTemp !== "number") continue;
+
+    if (curTemp > max) max = curTemp;
+    if (curTemp < min) min = curTemp;
+  }
+  console.log(max, min);
+};
+
+calcTempAmplitude([3, 7, 2, 3, 1, 6]);
 //1.  Understand the problem.
 //First define temperature amplitude:  Temperature amplitude is the difference between the minimum and maximum temperature that ocurred within a specific recording time period.   So we need to consider creating a new array with ordered data.
 //2. Breaking into sub-problems.

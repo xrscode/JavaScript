@@ -1,69 +1,44 @@
 "use strict";
-// Problem:
-//We work for a company building a smart home thermomenter.  Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude.  Keep in mind that someitmes there might be a sensor error."
+/* Given an array of forecasted maximum temperatures, the thermometer displays a string with these temperatures. 
 
-const temperatures = [
-  3,
-  -2,
-  -6,
-  -1,
-  "error",
-  9,
-  1000,
-  -101,
-  13,
-  17,
-  15,
-  14,
-  9,
-  5,
-];
-let numberArray = [];
+Example: [17, 21, 23] will print "...17 degrees in 1 days, 21 degrees in 2 days, 23 degrees in 3 days..."
 
-for (let i = 0; i < temperatures.length; i++) {
-  if (
-    typeof temperatures[i] === "number" &&
-    temperatures[i] <= 100 &&
-    temperatures[i] >= -100
-  ) {
-    numberArray.push(temperatures[i]);
-  } else {
-    console.log(`These are the errors: ${temperatures[i]}`);
-  }
-}
+Create a function 'printForecast' which takes in an array 'arr' and logs a string like the above to the console.
 
-numberArray.sort(function (a, b) {
-  return a - b;
-});
+TEST DATA 1: [17, 21, 23];
+TEST DATA 2: [12, 5, -5, 0, 4];
+*/
+let testData1 = [17, 21, 23];
+let testData2 = [12, 5, -5, 0, 4];
 
-let amplitude = function () {
-  let amp = numberArray[0] - numberArray[numberArray.length - 1];
-  if (amp <= 0) {
-    return amp * -1;
-  } else {
-    return amp;
+//My Solution:
+const printForecast = function (arr) {
+  //Index Position.
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.indexOf(arr[i]) === 0) {
+      console.log(`Today the temperature is ${arr[i]} degrees.`);
+    } else if (arr.indexOf(arr[i]) === 1) {
+      console.log(`Tomorrow the temperature is ${arr[i]} degrees.`);
+    } else {
+      console.log(
+        `In ${arr.indexOf(arr[i])} days the temperature will be ${
+          arr[i]
+        } degrees.`
+      );
+    }
   }
 };
 
-console.log(`The temperature amplitude is; ${amplitude()} degrees.`);
+printForecast(testData1);
+printForecast(testData2);
 
-//Alternative Solution
+// //Instructor Solution
+// const printForecast = function (arr) {
+//   let str = ""; //Creates a String Variable.
+//   for (let i = 0; i < arr.length; i++) {
+//     str = str + `${arr[i]} degrees.  In ${i + 1} days ...`; //Adds to the string value as for loop iterates through the array.   i + 1 is the current array position plus 1.
+//   }
+//   console.log("..." + str);
+// };
 
-const calcTempAmplitude = function (temps) {
-  let max = temps[0];
-  let min = temps[0];
-
-  for (let i = 0; i < temps.length; i++) {
-    const curTemp = temps[i];
-    if (typeof curTemp !== "number") continue;
-
-    if (curTemp > max) max = curTemp;
-    if (curTemp < min) min = curTemp;
-  }
-  console.log(max, min);
-};
-
-calcTempAmplitude([3, 7, 2, 3, 1, 6]);
-//1.  Understand the problem.
-//First define temperature amplitude:  Temperature amplitude is the difference between the minimum and maximum temperature that ocurred within a specific recording time period.   So we need to consider creating a new array with ordered data.
-//2. Breaking into sub-problems.
+// printForecast(testData1);
